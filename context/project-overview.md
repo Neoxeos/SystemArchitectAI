@@ -32,5 +32,45 @@ Thi sproject is a real-time collaborative sustem design worksapce. Users describ
 - Live cursors, presence indicators, and node/edge editing.
 - Canvas snapshots persisted to the filesystem.
 
-### Starte System designs
-- 
+### Starter System designs
+- A cureated library of prebuilt system design templates.
+- Users can import a starter template intot the canvas at any point during editing.
+- Templates are static canvas snapshots loaded derectly intot the active room.
+- Covers common patterns: monolith, microservices, event-driven, serverless and more.
+
+### AI architecture generation
+- AI generates a system design from a user-supplied prompt.
+- Output is structured as canvas nodes and edges written into the shared room.
+- Generation runs as a durable background task.
+
+### Spec generation
+- The current graph is converted into a Markdown technical specification.
+- Specs are persisted as files and linked to the project in the database.
+- Users can view and download generated specs.
+
+## Scope
+### In Scope
+- Authentication and route protection
+- Proejct creation and ownership
+- Collaborator access by project
+- Starter system design template library and import
+- Real time shared canvas with nodes, edges and presence
+- AI-powered architecture generation from prompts
+- AI-powered Markdown spec generation from canvas graph
+- Persistent storage for proejct metada and generated artifacts
+- Spec download
+
+### out of scope
+- Billing and subscription systems
+- Enterprise permission tiers beyond owner and collaborator
+- Versioned spec history and review workflows
+- Production object storage migration
+- Mobile-native applications
+
+## Success Criteria
+1. A signed-in user can create and open a project.
+2. Multiple users can collaborate in the same canvas simultaneously.
+3. A user can import a prebuilt starter design into the canvas.
+4. AI can generate an architecture into the shared room from a prompt.
+5. The graph can be converted into a persisted Markdown spec.
+6. Project metadata and generated artifacts are stored in the correct layers.
