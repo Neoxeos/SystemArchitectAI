@@ -1,44 +1,53 @@
 # Code Standards
 
 ## General
-- Keep modules small and single-purpose.
-- Fix toot causes - do not layter workarounds.
-- Do not mix unrelated concerns in one component or route.
-- Respect the system boundaries defined in architecture-context.md
 
-## Typescript
-- Strict mdoe is required throughout the project.
-- Avoid any; use explicit interfaces or narrowly scoped types.
-- Validate unknown external input at system boundaries before trusting it.
-- Use interface for object contracts.
+- [Principle — e.g. Keep modules small and single-purpose]
+- [Principle — e.g. Fix root causes, do not layer workarounds]
+- [Principle — e.g. Do not mix unrelated concerns in one
+  component or route]
 
-## Next.js
-- Default to React Server Components.
-- Add "use client" only when the component needs browser interactivity, hooks, or real-time state.
-- Keep route handlers focuse on a single responsibility.
-- Long-running work belongs in background tasks, not in request handlers.
+## TypeScript
+
+- [Rule — e.g. Strict mode is required throughout the project]
+- [Rule — e.g. Avoid any — use explicit interfaces or narrowly
+  scoped types]
+- [Rule — e.g. Validate unknown external input at system
+  boundaries before trusting it]
+
+## [Framework — e.g. Next.js]
+
+- [Convention — e.g. Default to server components]
+- [Convention — e.g. Add use client only when browser
+  interactivity requires it]
+- [Convention — e.g. Keep route handlers focused on a
+  single responsibility]
 
 ## Styling
-- Use CSS custon property tokens deifned in global.css - no raw Tailwinf color classes like zinc-* or hardcoded hex values.
-- Reference tokens through their Tailwind utility names: bg-base, text-copy-primary, border-surface-broder, text-brand, etc.
-- Maintain the border radius scale: rounded-xl for small elements, rounded-exl for cards, rounded-3xl for modals.
+
+- [Rule — e.g. Use CSS custom property tokens — no
+  hardcoded hex values]
+- [Rule — e.g. Follow the border radius scale defined
+  in ui-context.md]
 
 ## API Routes
-- Validate and parse request input before any logic runs.
-- Enforece auth and project ownership checks before any mutation.
-- Retrun consistent, predictable response shapes.
-- Keep route handlers thin - push complexity into shared modules or background tasks.
+
+- [Rule — e.g. Validate and parse request input before
+  any logic runs]
+- [Rule — e.g. Enforce auth and ownership before any mutation]
+- [Rule — e.g. Return consistent, predictable response shapes]
 
 ## Data and Storage
-- Project metadata and relationships belong in PostgreSQL via Prisma.
-- Canvas snapshots and generated specs belong in Vercel Blob; Prisma stores only the blob URL reference.
-- Do not store large generated content directyl in the database.
-- Task run records are first-class relational data - treat ownership and run IDs as verified before any token issuance.
+
+- [Rule — e.g. Metadata belongs in the database]
+- [Rule — e.g. Large generated content belongs in file
+  or blob storage]
+- [Rule — e.g. Do not store large content directly in
+  the database]
 
 ## File Organization
-- lib/ - shared infrastructure: Prisma client, auth helpers, utilities.
-- trigger/ - all durable background tasks and AI workflows.
-- components/ - UI composition only; no business logic.
-- app/api/ - route handlers for auth, triggering, and persistence.
-- Name file after teh responsibility they contain not the technology.
 
+- `[folder]/` — [What belongs here]
+- `[folder]/` — [What belongs here]
+- `[folder]/` — [What belongs here]
+- `[folder]/` — [What belongs here]s
