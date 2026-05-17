@@ -9,7 +9,7 @@ change.
 
 ## Current Goal
 
-- Feature spec 01 complete: design system and UI primitive components are installed and configured.
+- Feature spec 02 complete: editor navbar, floating project sidebar, and reusable dialog composition pattern are implemented.
 
 ## Completed
 
@@ -20,6 +20,10 @@ change.
 - Added reusable `cn()` helper in `lib/utils.ts`.
 - Set the global shadcn theme to dark defaults in `app/globals.css`.
 - Updated `context/ui-context.md` to document the implemented design system.
+- Editor navbar implemented in `components/editor/editor-navbar.tsx`.
+- Floating project sidebar implemented in `components/editor/project-sidebar.tsx`.
+- Reusable editor dialog content pattern implemented in `components/editor/editor-dialog.tsx`.
+- Verified feature spec 02 with `npm.cmd run lint` and `npm.cmd run build`.
 
 ## In Progress
 
@@ -38,9 +42,15 @@ change.
 - Use shadcn/ui generated primitives in `components/ui/` with `components.json` as the registry/config source.
 - Use `lib/utils.ts` for shared Tailwind class merging through `cn()`.
 - Use dark CSS custom property tokens as the default global theme.
+- Keep editor chrome components under `components/editor/`.
+- Project sidebar is fixed-position and transform-driven so it floats above the editor canvas without pushing page content.
+- Dialog pattern composes existing shadcn dialog primitives with editor-owned defaults instead of creating concrete dialogs.
 
 ## Session Notes
 
 - Started implementation of the design system feature on 2026-05-16.
 - shadcn CLI was run with `init --defaults --no-monorepo --pointer`.
 - `npm.cmd run build` passes with Next.js 16.2.6.
+- Started implementation of editor feature spec 02 on 2026-05-17.
+- `npm.cmd run lint` passes for feature spec 02 on 2026-05-17.
+- `npm.cmd run build` passes for feature spec 02 on 2026-05-17.
