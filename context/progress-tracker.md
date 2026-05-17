@@ -5,33 +5,42 @@ change.
 
 ## Current Phase
 
-- [e.g. Not started / In progress / Complete]
+- Complete
 
 ## Current Goal
 
-- [What you are building right now]
+- Feature spec 01 complete: design system and UI primitive components are installed and configured.
 
 ## Completed
 
-- None yet.
+- Design system setup from `context/feature-specs/01-design-system.md`.
+- shadcn/ui initialized with the default Next.js preset.
+- Added shadcn components: Button, Card, Dialog, Input, Tabs, Textarea, and ScrollArea.
+- Installed `lucide-react` and shadcn support dependencies.
+- Added reusable `cn()` helper in `lib/utils.ts`.
+- Set the global shadcn theme to dark defaults in `app/globals.css`.
+- Updated `context/ui-context.md` to document the implemented design system.
 
 ## In Progress
 
-- None yet.
+- None.
 
 ## Next Up
 
-- [First unit to build]
+- Choose the next feature spec to implement.
 
 ## Open Questions
 
-- [Any unresolved product or technical decisions]
+- None.
 
 ## Architecture Decisions
 
-- [Decisions made that affect the system design or
-  data model — include why the decision was made]
+- Use shadcn/ui generated primitives in `components/ui/` with `components.json` as the registry/config source.
+- Use `lib/utils.ts` for shared Tailwind class merging through `cn()`.
+- Use dark CSS custom property tokens as the default global theme.
 
 ## Session Notes
 
-- [Context needed to resume work in the next session]
+- Started implementation of the design system feature on 2026-05-16.
+- shadcn CLI was run with `init --defaults --no-monorepo --pointer`.
+- `npm.cmd run build` passes with Next.js 16.2.6.

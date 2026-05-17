@@ -2,58 +2,67 @@
 
 ## Theme
 
-[Describe the overall visual language — e.g. Dark only.
-No light mode. The design language is a dark technical
-workspace — near-black backgrounds, layered surfaces,
-and vivid accent colors for interactive elements.]
+Dark by default. The UI uses shadcn/ui primitives on top
+of Tailwind CSS v4 with CSS custom properties for theme
+tokens. No default light theme should appear.
 
 ## Colors
 
-[Define your color tokens as CSS custom properties.
-All components must use these tokens — no hardcoded
-hex values.]
+All components must use theme tokens from `app/globals.css`;
+do not hardcode color values in component classes.
 
-| Role            | CSS Variable       | Value    |
-| --------------- | ------------------ | -------- |
-| Page background | `--bg-base`        | `#[hex]` |
-| Surface         | `--bg-surface`     | `#[hex]` |
-| Primary text    | `--text-primary`   | `#[hex]` |
-| Muted text      | `--text-muted`     | `#[hex]` |
-| Primary accent  | `--accent-primary` | `#[hex]` |
-| Border          | `--border-default` | `#[hex]` |
-| Error           | `--state-error`    | `#[hex]` |
-| Success         | `--state-success`  | `#[hex]` |
+| Role            | CSS Variable         | Value                         |
+| --------------- | -------------------- | ----------------------------- |
+| Page background | `--background`       | `oklch(0.145 0 0)`            |
+| Surface         | `--card`             | `oklch(0.205 0 0)`            |
+| Primary text    | `--foreground`       | `oklch(0.985 0 0)`            |
+| Muted text      | `--muted-foreground` | `oklch(0.708 0 0)`            |
+| Primary accent  | `--primary`          | `oklch(0.922 0 0)`            |
+| Border          | `--border`           | `oklch(1 0 0 / 10%)`          |
+| Error           | `--destructive`      | `oklch(0.704 0.191 22.216)`   |
+| Input           | `--input`            | `oklch(1 0 0 / 15%)`          |
 
 ## Typography
 
-| Role      | Font              | Variable      |
-| --------- | ----------------- | ------------- |
-| UI text   | [e.g. Geist Sans] | `--font-sans` |
-| Code/mono | [e.g. Geist Mono] | `--font-mono` |
+| Role      | Font       | Variable      |
+| --------- | ---------- | ------------- |
+| UI text   | Geist Sans | `--font-sans` |
+| Code/mono | Geist Mono | `--font-mono` |
 
 ## Border Radius
 
-| Context           | Class            |
-| ----------------- | ---------------- |
-| Inline / small UI | `rounded-[size]` |
-| Cards / panels    | `rounded-[size]` |
-| Modals / overlays | `rounded-[size]` |
+| Context           | Class                    |
+| ----------------- | ------------------------ |
+| Inline / small UI | `rounded-sm` / `rounded-md` |
+| Cards / panels    | `rounded-lg`             |
+| Modals / overlays | `rounded-lg`             |
 
 ## Component Library
 
-[e.g. shadcn/ui on top of Tailwind. Components live
-in components/ui/. Use the CLI to add new components
-rather than writing from scratch.]
+shadcn/ui on top of Tailwind CSS v4. Components live in
+`components/ui/`. Use the shadcn CLI to add generated
+components and do not hand-edit generated files after
+installation.
+
+Installed primitives:
+
+- Button
+- Card
+- Dialog
+- Input
+- Tabs
+- Textarea
+- ScrollArea
 
 ## Layout Patterns
 
-- [Pattern — e.g. Editor: full-viewport split with
-  left sidebar, center canvas, right sidebar]
-- [Pattern — e.g. Sidebars: fixed width with border separator]
-- [Pattern — e.g. Modals: centered overlay with backdrop blur]
-- [Pattern — e.g. Navbar: top bar with bottom border]
+- App shell uses global dark background and foreground tokens.
+- Panels and cards use shadcn `card`, `border`, and `muted`
+  theme tokens.
+- Dialogs use generated shadcn overlay/content primitives.
+- Scrollable regions use the generated `ScrollArea` primitive.
 
 ## Icons
 
-[e.g. Lucide React. Stroke-based icons only. Sizes:
-h-4 w-4 for inline, h-5 w-5 for buttons.]
+Lucide React. Stroke-based icons only. Use `h-4 w-4` for
+inline icons and `h-5 w-5` for larger button icons.
